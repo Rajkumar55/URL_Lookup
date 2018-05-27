@@ -1,0 +1,5 @@
+*.pyc
+**/migrations
+.idea/*
+*.log
+static/*
