@@ -15,6 +15,18 @@ class URLInfoView(viewsets.ModelViewSet):
         :param args:
         :param kwargs:
         :return:
+
+        # Sample Request
+            http://localhost:8000/urlinfo/1/example.com:80/test
+
+        # Sample Output
+
+            {
+                "host_name": "example.com",
+                "port": 80,
+                "path": "test",
+                "status": "malicious"
+            }
         """
         try:
             host = kwargs['host']
@@ -53,11 +65,12 @@ class URLInfoView(viewsets.ModelViewSet):
         :return:
         """
         data = json.loads(request.body)
-        is_inserted = URLInfo.insert(URLInfo(), data)
-        if is_inserted:
+
+        is_inserted, message = URLInfo.insert(URLInfo(), data)
+        if is_inserted or message == 'Already Available':
             response = {
                 'status': 'success',
-                'message': 'Inserted successfully'
+                'message': message
             }
             return JsonResponse(response)
 

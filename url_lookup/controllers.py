@@ -12,7 +12,12 @@ class URLInfo(object):
 
     def insert(self, data):
         if data['host_name']:
-            URLBlacklist.objects.create(url=data['host_name'], is_active=True)
-            return True
+            try:
+                url_info = URLBlacklist.objects.get(url__iexact=data['host_name'])
+                if url_info.is_active:
+                    return False, 'Already Available'
+            except URLBlacklist.DoesNotExist as e:
+                URLBlacklist.objects.create(url=data['host_name'], is_active=True)
+                return True, 'Inserted successfully'
         else:
-            return False
+            return False, None
