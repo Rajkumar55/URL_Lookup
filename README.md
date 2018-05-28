@@ -1,12 +1,14 @@
 # URL_Lookup
 This service is developed using Python 3.6.5 and Django 2.0.5.
-It is developed with Django Rest Framework following MVC Pattern.
+It is developed with Django Rest Framework following MVC Pattern. The DataBase used is MySQL.
 
 ## Prerequisites
 The requirements.txt file contains all the necessary packages that is needed for this application. The packages can be installed using the following command:
 ```
 pip install -r requirements.txt
 ```
+Install MySQL and create a DataBase named 'url_lookup'
+
 ## Deployment on Local Machine
 Once all the packages are installed, run the following commands sequentially:
 ```
