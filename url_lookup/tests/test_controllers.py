@@ -1,7 +1,4 @@
 from django.test import TestCase
-import json
-from rest_framework import status
-
 from url_lookup.controllers import URLInfo
 from url_lookup.models import URLBlacklist
 

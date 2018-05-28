@@ -1,13 +1,16 @@
 from django.urls import path
 
-from url_lookup.views import URLInfoView
+from url_lookup.views import URLInfoView, URLCheckView
 
 url_info_view = URLInfoView.as_view({
-    'get': 'get',
-    'post': 'create'
+    'get': 'list',
+    'post': 'create',
+    'put': 'update'
 })
 urlpatterns = [
-    path('1/<str:host>/<str:path>', url_info_view,
+    path('1/<str:host>/<str:path>', URLCheckView.as_view(),
          name='Get URL Info'),
-    path('add/', url_info_view, name='Add new URL')
+    path('list/', url_info_view, name='List all URLs'),
+    path('add/', url_info_view, name='Add new URL'),
+    path('update/', url_info_view, name='Update URL')
 ]
