@@ -32,7 +32,7 @@ class URLInfoView(viewsets.ModelViewSet):
             if port:
                 port = int(port)
 
-            info = {'host_name': host_name, 'port': port, 'path': path, 'status': 'not safe' if is_exists else 'safe'}
+            info = {'host_name': host_name, 'port': port, 'path': path, 'status': 'malicious' if is_exists else 'safe'}
             return JsonResponse(info)
 
         except Exception as e:
