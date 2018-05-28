@@ -10,7 +10,5 @@ url_info_view = URLInfoView.as_view({
 urlpatterns = [
     path('1/<str:host>/<str:path>', URLCheckView.as_view(),
          name='Get URL Info'),
-    path('list/', url_info_view, name='List all URLs'),
-    path('add/', url_info_view, name='Add new URL'),
-    path('update/', url_info_view, name='Update URL')
+    path('url/', url_info_view, name='Add/Update/List URLs')
 ]

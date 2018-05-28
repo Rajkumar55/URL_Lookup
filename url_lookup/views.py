@@ -74,7 +74,7 @@ class URLInfoView(viewsets.ModelViewSet):
         :return:
 
         # Sample Request
-            GET http://localhost:8000/urlinfo/list/
+            GET http://localhost:8000/urlinfo/url/
 
         # Sample Response
         {
@@ -116,7 +116,7 @@ class URLInfoView(viewsets.ModelViewSet):
         :return:
 
         # Sample Request
-            POST http://localhost:8000/urlinfo/add/
+            POST http://localhost:8000/urlinfo/url/
             {
                 "url": "example.us"
             }
@@ -148,6 +148,7 @@ class URLInfoView(viewsets.ModelViewSet):
                 return JsonResponse(error_response, status=400)
 
         except Exception as e:
+            print(e)
             error_response = {
                 'status': 'error',
                 'message': str(e)
@@ -164,7 +165,7 @@ class URLInfoView(viewsets.ModelViewSet):
         :return:
 
         # Sample Request
-            PUT http://localhost:8000/urlinfo/update/
+            PUT http://localhost:8000/urlinfo/url/
             {
                 "url_id": 14,
                 "url": "example.ru"
