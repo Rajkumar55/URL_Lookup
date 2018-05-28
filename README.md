@@ -1,5 +1,6 @@
 # URL_Lookup
-This service is developed using Python 3.6.5 and Django 2.0.5
+This service is developed using Python 3.6.5 and Django 2.0.5.
+It is developed with Django Rest Framework following MVC Pattern.
 
 ## Prerequisites
 The requirements.txt file contains all the necessary packages that is needed for this application. The packages can be installed using the following command:
@@ -32,6 +33,13 @@ This command creates a superuser profile to access the admin page(http://localho
 python manage.py runserver
 ```
 This command is used to start the server
+
+## Testcases
+API Level Testcases and Functional Testcases have been added.
+Run the following command to run all the testcases:
+```
+pytest
+```
 
 ## API Docs
 To check the URL info:
