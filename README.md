@@ -46,7 +46,7 @@ pytest
 ## API Docs
 To check the URL info:
 ```
-GET - http://localhost:8000/urlinfo/1/{hostname_and_port}/{original_path_and_query_string}
+GET - http://url-lookup-service-elb-692460868.ap-south-1.elb.amazonaws.com/urlinfo/1/{hostname_and_port}/{original_path_and_query_string}
 ```
 Response Format:
 ```
@@ -60,7 +60,7 @@ Response Format:
 
 To list all URLs in the DataBase:
 ```
-GET - http://localhost:8000/urlinfo/url/
+GET - http://url-lookup-service-elb-692460868.ap-south-1.elb.amazonaws.com/urlinfo/url/
 ```
 Sample Response
 ```
@@ -83,7 +83,7 @@ Sample Response
 
 To add a new URL to the DataBase:
 ```
-POST - http://localhost:8000/urlinfo/url/
+POST - http://url-lookup-service-elb-692460868.ap-south-1.elb.amazonaws.com/urlinfo/url/
 ```
 Sample Request
 ```
@@ -101,7 +101,7 @@ Sample Response
 
 To update an existing URL:
 ```
-PUT - http://localhost:8000/urlinfo/url/
+PUT - http://url-lookup-service-elb-692460868.ap-south-1.elb.amazonaws.com/urlinfo/url/
 ```
 Sample Request
 ```
